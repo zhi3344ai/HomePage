@@ -1,0 +1,67 @@
+# 依赖文件
+dev/node_modules/
+dev/package-lock.json
+
+# 部署配置
+.vercel/
+.netlify/
+
+# 编辑器配置
+.vscode/
+.idea/
+
+# 配置文件
+admin/config/database.php
+admin/config/config.php
+
+# 上传文件
+admin/uploads/*
+!admin/uploads/.gitkeep
+
+# 日志文件
+admin/logs/*
+!admin/logs/.gitkeep
+
+# 临时文件
+*.tmp
+*.temp
+*.log
+
+# 系统文件
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE文件
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 安装文件（生产环境）
+install.php
+database/data.sql
+
+# 备份文件
+*.bak
+*.backup
+
+# 缓存文件
+*.cache
+
+# 环境变量文件
+.env
+.env.local
+.env.production
+
+# 构建输出
+dist/
+build/
+
+# 测试覆盖率
+coverage/
+
+# 压缩文件
+*.zip
+*.tar.gz
+*.rar

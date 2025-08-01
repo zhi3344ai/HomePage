@@ -1,0 +1,32 @@
+{
+  "name": "HomePage - 个人导航页",
+  "short_name": "HomePage",
+  "description": "一个具有未来科技感设计的个人导航页面，支持多主题切换、响应式布局和丰富的视觉效果",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#00f5ff",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "zh-CN",
+  "dir": "ltr",
+  "categories": ["productivity", "utilities", "navigation"],
+  "icons": [
+    {
+      "src": "../assets/icons/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [],
+  "screenshots": [],
+  "related_applications": [],
+  "prefer_related_applications": false,
+  "edge_side_panel": {
+    "preferred_width": 400
+  },
+  "launch_handler": {
+    "client_mode": "navigate-existing"
+  }
+}

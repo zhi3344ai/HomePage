@@ -1,0 +1,410 @@
+/* 响应式设计 - 适配各种设备尺寸 */
+
+/* 大屏幕 (1200px+) */
+@media (min-width: 1200px) {
+  .main-container {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  
+  .nav-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .profile-card {
+    max-width: 700px;
+  }
+}
+
+/* 中等屏幕 (768px - 1199px) */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .main-container {
+    padding: var(--space-lg);
+  }
+  
+  .nav-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .profile-stats {
+    gap: var(--space-lg);
+  }
+}
+
+/* 平板设备 (481px - 767px) */
+@media (min-width: 481px) and (max-width: 767px) {
+  .main-container {
+    padding: var(--space-md);
+    gap: var(--space-xl);
+  }
+  
+  .profile-card {
+    padding: var(--space-lg);
+  }
+  
+  .profile-avatar {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .profile-name {
+    font-size: var(--font-size-xl);
+  }
+  
+  .profile-stats {
+    gap: var(--space-md);
+  }
+  
+  .nav-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+  
+  .nav-header {
+    max-width: 100%;
+  }
+  
+  .theme-switcher {
+    top: var(--space-md);
+    right: var(--space-md);
+  }
+  
+  .theme-btn {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .nav-category {
+    padding: var(--space-md);
+  }
+  
+  .nav-items {
+    gap: var(--space-xs);
+  }
+  
+  .nav-item {
+    padding: var(--space-sm);
+  }
+}
+
+/* 手机设备 (320px - 480px) */
+@media (max-width: 480px) {
+  .main-container {
+    padding: var(--space-sm);
+    gap: var(--space-lg);
+  }
+  
+  .profile-card {
+    padding: var(--space-md);
+  }
+  
+  .profile-avatar {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .profile-name {
+    font-size: var(--font-size-lg);
+  }
+  
+  .profile-title {
+    font-size: var(--font-size-base);
+  }
+  
+  .profile-description {
+    font-size: var(--font-size-sm);
+  }
+  
+  .profile-stats {
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+  
+  .stat-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-xs) var(--space-sm);
+    background: var(--surface-color);
+    border-radius: var(--radius-sm);
+  }
+  
+  .stat-number {
+    font-size: var(--font-size-lg);
+  }
+  
+  .social-links {
+    gap: var(--space-sm);
+  }
+  
+  .social-link {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+  
+  .nav-title {
+    font-size: var(--font-size-lg);
+  }
+  
+  .nav-category {
+    padding: var(--space-sm);
+  }
+  
+  .category-header {
+    margin-bottom: var(--space-md);
+  }
+  
+  .category-name {
+    font-size: var(--font-size-base);
+  }
+  
+  .nav-item {
+    padding: var(--space-xs) var(--space-sm);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-xs);
+  }
+  
+  .nav-item-icon {
+    font-size: 18px;
+  }
+  
+  .nav-item-name {
+    font-size: var(--font-size-sm);
+  }
+  
+  .nav-item-description {
+    font-size: var(--font-size-xs);
+  }
+  
+  .theme-switcher {
+    top: var(--space-sm);
+    right: var(--space-sm);
+  }
+  
+  .theme-btn {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .theme-icon::before {
+    font-size: 16px;
+  }
+  
+  .theme-modal-content {
+    padding: var(--space-md);
+    width: 95%;
+  }
+  
+  .theme-option {
+    padding: var(--space-sm);
+    gap: var(--space-sm);
+  }
+  
+  .theme-preview {
+    width: 50px;
+    height: 30px;
+  }
+  
+  .theme-info h3 {
+    font-size: var(--font-size-base);
+  }
+  
+  .theme-info p {
+    font-size: var(--font-size-xs);
+  }
+}
+
+/* 超小屏幕 (小于320px) */
+@media (max-width: 319px) {
+  .main-container {
+    padding: var(--space-xs);
+  }
+  
+  .profile-card {
+    padding: var(--space-sm);
+  }
+  
+  .profile-avatar {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .profile-name {
+    font-size: var(--font-size-base);
+  }
+  
+  .social-link {
+    width: 35px;
+    height: 35px;
+    font-size: 14px;
+  }
+  
+  .nav-category {
+    padding: var(--space-xs);
+  }
+  
+  .theme-btn {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+/* 横屏模式优化 */
+@media (orientation: landscape) and (max-height: 600px) {
+  .main-container {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: var(--space-lg);
+    padding: var(--space-md);
+  }
+  
+  .profile-section {
+    flex: 0 0 300px;
+    max-width: 300px;
+  }
+  
+  .navigation-section {
+    flex: 1;
+  }
+  
+  .profile-card {
+    padding: var(--space-md);
+  }
+  
+  .profile-avatar {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .profile-stats {
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+  
+  .stat-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+/* 高分辨率屏幕优化 */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .profile-avatar img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+  
+  .nav-item-icon,
+  .category-icon,
+  .social-link {
+    image-rendering: -webkit-optimize-contrast;
+  }
+}
+
+/* 触摸设备优化 */
+@media (hover: none) and (pointer: coarse) {
+  .nav-item:hover,
+  .social-link:hover,
+  .theme-btn:hover,
+  .profile-card:hover,
+  .nav-category:hover {
+    transform: none;
+  }
+  
+  .nav-item:active {
+    background: var(--surface-color);
+    transform: scale(0.98);
+  }
+  
+  .social-link:active,
+  .theme-btn:active {
+    transform: scale(0.95);
+  }
+  
+  /* 增加触摸目标大小 */
+  .nav-item {
+    min-height: 44px;
+  }
+  
+  .social-link {
+    min-width: 44px;
+    min-height: 44px;
+  }
+  
+  .theme-btn {
+    min-width: 44px;
+    min-height: 44px;
+  }
+}
+
+/* 打印样式 */
+@media print {
+  .theme-switcher,
+  .loading-screen,
+  .original-background {
+    display: none !important;
+  }
+  
+  .main-container {
+    background: white;
+    color: black;
+    padding: 20px;
+  }
+  
+  .profile-card,
+  .nav-category {
+    background: white;
+    border: 1px solid #ccc;
+    box-shadow: none;
+  }
+  
+  .nav-item {
+    break-inside: avoid;
+  }
+  
+  .profile-name,
+  .nav-title,
+  .category-name {
+    color: black;
+  }
+}
+
+/* 可访问性增强 */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .original-circle,
+  .avatar-glow,
+  .status-indicator,
+  .loading-spinner {
+    animation: none !important;
+  }
+}
+
+/* 高对比度模式 */
+@media (prefers-contrast: high) {
+  :root {
+    --glass-bg: rgba(255, 255, 255, 0.2);
+    --glass-border: rgba(255, 255, 255, 0.5);
+    --surface-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  .profile-card,
+  .nav-category,
+  .nav-item {
+    border-width: 2px;
+  }
+  
+  .nav-item:hover,
+  .nav-item:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+  }
+}
