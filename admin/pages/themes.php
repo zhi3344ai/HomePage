@@ -72,19 +72,50 @@ if (isset($_GET['action']) && $_GET['action'] === 'toggle' && isset($_GET['id'])
                         $colors = json_decode($theme['colors'], true);
                         $effects = json_decode($theme['effects'], true);
                         ?>
-                        <div class="theme-card <?= $theme['is_default'] ? 'theme-default' : '' ?> <?= !$theme['is_active'] ? 'theme-disabled' : '' ?>">
-                            <div class="theme-preview" style="background: linear-gradient(135deg, <?= htmlspecialchars($colors['primary'] ?? '#00f5ff') ?> 0%, <?= htmlspecialchars($colors['secondary'] ?? '#ff0080') ?> 100%);">
+                        <div class="theme-card <?= $theme['is_default'] ? 'theme-default' : '' ?> <?= !$theme['is_active'] ? 'theme-disabled' : '' ?>" data-theme="<?= htmlspecialchars($theme['name']) ?>">
+                            <?php
+                            // 根据主题名称设置不同的预览样式
+                            $previewStyle = '';
+                            $previewContent = '';
+                            
+                            switch($theme['name']) {
+                                case 'cyberpunk':
+                                    $previewStyle = "background: linear-gradient(135deg, {$colors['primary']} 0%, {$colors['secondary']} 100%);";
+                                    $previewContent = '<div class="preview-neon-line"></div>';
+                                    break;
+                                case 'aurora':
+                                    $previewStyle = "background: linear-gradient(135deg, {$colors['primary']} 0%, {$colors['secondary']} 100%); backdrop-filter: blur(5px);";
+                                    $previewContent = '<div class="preview-aurora-waves"></div>';
+                                    break;
+                                case 'synthwave':
+                                    $previewStyle = "background: linear-gradient(180deg, {$colors['background']} 0%, {$colors['primary']} 100%);";
+                                    $previewContent = '<div class="preview-grid"></div>';
+                                    break;
+                                case 'matrix':
+                                    $previewStyle = "background: {$colors['background']}; border: 1px dashed {$colors['primary']};";
+                                    $previewContent = '<div class="preview-code">01</div>';
+                                    break;
+                                case 'neon':
+                                    $previewStyle = "background: {$colors['background']}; border: 2px double {$colors['primary']};";
+                                    $previewContent = '<div class="preview-neon-glow"></div>';
+                                    break;
+                                default:
+                                    $previewStyle = "background: linear-gradient(135deg, {$colors['primary']} 0%, {$colors['secondary']} 100%);";
+                            }
+                            ?>
+                            <div class="theme-preview" style="<?= $previewStyle ?>">
+                                <?= $previewContent ?>
                                 <div class="theme-preview-content">
-                                    <div class="preview-header" style="background: <?= htmlspecialchars($colors['background'] ?? '#0a0a0a') ?>;">
-                                        <div class="preview-title" style="color: <?= htmlspecialchars($colors['text'] ?? '#ffffff') ?>;">
+                                    <div class="preview-header" style="background: <?= htmlspecialchars($colors['background'] ?? '#0a0a0a') ?>; border-style: <?= $theme['name'] == 'matrix' ? 'dashed' : ($theme['name'] == 'neon' ? 'double' : 'solid') ?>; border-color: <?= htmlspecialchars($colors['primary'] ?? '#00f5ff') ?>;">
+                                        <div class="preview-title" style="color: <?= htmlspecialchars($colors['text'] ?? '#ffffff') ?>; font-family: <?= $theme['name'] == 'matrix' ? '\'Courier New\', monospace' : ($theme['name'] == 'synthwave' ? '\'VT323\', monospace' : 'inherit') ?>;">
                                             <?= htmlspecialchars($theme['display_name']) ?>
                                         </div>
                                     </div>
-                                    <div class="preview-body">
-                                        <div class="preview-button" style="background: <?= htmlspecialchars($colors['primary'] ?? '#00f5ff') ?>; color: <?= htmlspecialchars($colors['text'] ?? '#ffffff') ?>;">
+                                    <div class="preview-body" style="background: <?= $theme['name'] == 'matrix' ? 'rgba(0, 255, 65, 0.05)' : 'transparent' ?>;">
+                                        <div class="preview-button" style="background: <?= htmlspecialchars($colors['primary'] ?? '#00f5ff') ?>; color: <?= htmlspecialchars($colors['text'] ?? '#ffffff') ?>; border-radius: <?= $theme['name'] == 'synthwave' ? '0' : '4px' ?>; box-shadow: <?= $theme['name'] == 'neon' ? '0 0 10px ' . $colors['primary'] : 'none' ?>;">
                                             按钮
                                         </div>
-                                        <div class="preview-accent" style="background: <?= htmlspecialchars($colors['accent'] ?? '#00ff41') ?>;">
+                                        <div class="preview-accent" style="background: <?= htmlspecialchars($colors['accent'] ?? '#00ff41') ?>; border-radius: <?= $theme['name'] == 'synthwave' ? '0' : '50%' ?>;">
                                         </div>
                                     </div>
                                 </div>
@@ -103,6 +134,31 @@ if (isset($_GET['action']) && $_GET['action'] === 'toggle' && isset($_GET['id'])
                                             <?= $theme['is_active'] ? '启用' : '禁用' ?>
                                         </span>
                                     </div>
+                                </div>
+                                
+                                <div class="theme-description">
+                                    <?php
+                                    // 根据主题名称设置不同的描述
+                                    switch($theme['name']) {
+                                        case 'cyberpunk':
+                                            echo '<p>霓虹灯效果，高对比度的青色和品红色。</p>';
+                                            break;
+                                        case 'aurora':
+                                            echo '<p>流动渐变效果，柔和、梦幻般的蓝色和青色调。</p>';
+                                            break;
+                                        case 'synthwave':
+                                            echo '<p>复古网格，80年代风格，紫色和橙色的强烈对比。</p>';
+                                            break;
+                                        case 'matrix':
+                                            echo '<p>数字雨效果，终端风格，黑客美学，绿色代码。</p>';
+                                            break;
+                                        case 'neon':
+                                            echo '<p>城市夜景风格，红色和绿色的霓虹灯效果。</p>';
+                                            break;
+                                        default:
+                                            echo '<p>自定义主题风格。</p>';
+                                    }
+                                    ?>
                                 </div>
                                 
                                 <div class="theme-colors">
@@ -144,7 +200,7 @@ if (isset($_GET['action']) && $_GET['action'] === 'toggle' && isset($_GET['id'])
                     <div class="info-icon">🎨</div>
                     <div class="info-content">
                         <h4>主题切换</h4>
-                        <p>用户可以在前台页面切换不同的主题，默认主题将作为首次访问时的主题。</p>
+                        <p>用户可以在前台页面右上角点击主题切换按钮，选择不同的主题。默认主题将作为首次访问时的主题。</p>
                     </div>
                 </div>
                 
@@ -160,7 +216,7 @@ if (isset($_GET['action']) && $_GET['action'] === 'toggle' && isset($_GET['id'])
                     <div class="info-icon">✨</div>
                     <div class="info-content">
                         <h4>视觉效果</h4>
-                        <p>主题可以包含模糊效果、发光效果和粒子动画等视觉增强。</p>
+                        <p>每个主题都有独特的视觉效果：赛博朋克的霓虹灯效果、极光的流动渐变、合成波的复古网格、矩阵的数字雨和霓虹的城市夜景。</p>
                     </div>
                 </div>
                 
@@ -207,9 +263,87 @@ if (isset($_GET['action']) && $_GET['action'] === 'toggle' && isset($_GET['id'])
 }
 
 .theme-preview {
-    height: 120px;
+    height: 150px;
     position: relative;
     overflow: hidden;
+}
+
+/* 主题特定预览效果 */
+.preview-neon-line {
+    position: absolute;
+    height: 2px;
+    width: 80%;
+    background: linear-gradient(90deg, transparent, #00f5ff, transparent);
+    top: 50%;
+    left: 10%;
+    box-shadow: 0 0 10px #00f5ff;
+    animation: neonPulse 2s infinite;
+}
+
+.preview-aurora-waves {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(45deg, rgba(79, 172, 254, 0.1), rgba(0, 242, 254, 0.1));
+    animation: auroraWave 3s infinite;
+}
+
+.preview-grid {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(0deg, rgba(255, 0, 255, 0.1) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255, 0, 255, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+    animation: gridMove 10s linear infinite;
+}
+
+.preview-code {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #00ff41;
+    font-family: 'Courier New', monospace;
+    font-size: 24px;
+    text-shadow: 0 0 10px #00ff41;
+    animation: blink 1.5s infinite;
+}
+
+.preview-neon-glow {
+    position: absolute;
+    width: 60%;
+    height: 2px;
+    background: #39ff14;
+    top: 50%;
+    left: 20%;
+    box-shadow: 0 0 20px #39ff14;
+    animation: neonGlow 2s infinite;
+}
+
+@keyframes neonPulse {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+}
+
+@keyframes auroraWave {
+    0%, 100% { transform: translateY(0) scale(1); opacity: 0.5; }
+    50% { transform: translateY(-10px) scale(1.05); opacity: 0.8; }
+}
+
+@keyframes gridMove {
+    0% { background-position: 0 0; }
+    100% { background-position: 20px 20px; }
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+
+@keyframes neonGlow {
+    0%, 100% { box-shadow: 0 0 10px #39ff14; }
+    50% { box-shadow: 0 0 30px #39ff14; }
 }
 
 .theme-preview-content {
@@ -227,6 +361,8 @@ if (isset($_GET['action']) && $_GET['action'] === 'toggle' && isset($_GET['id'])
     display: flex;
     align-items: center;
     padding: 0 10px;
+    border-width: 1px;
+    border-bottom-style: solid;
 }
 
 .preview-title {
@@ -239,6 +375,7 @@ if (isset($_GET['action']) && $_GET['action'] === 'toggle' && isset($_GET['id'])
     display: flex;
     gap: 8px;
     align-items: center;
+    height: calc(100% - 30px);
 }
 
 .preview-button {
@@ -280,6 +417,34 @@ if (isset($_GET['action']) && $_GET['action'] === 'toggle' && isset($_GET['id'])
     border-radius: 4px;
     font-size: 10px;
     font-weight: bold;
+}
+
+.theme-description {
+    margin-bottom: 10px;
+}
+
+.theme-description p {
+    margin: 0;
+    font-size: 14px;
+    color: #666;
+}
+
+.theme-features {
+    margin-bottom: 10px;
+}
+
+.feature-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.feature-tag {
+    background: #f0f0f0;
+    color: #333;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 12px;
 }
 
 .theme-colors {

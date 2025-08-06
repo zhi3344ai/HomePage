@@ -39,6 +39,9 @@ async function initApp() {
 
         updateLoadingProgress(50);
 
+        // 更新网站标题和描述
+        updateSiteMetadata();
+
         // 初始化主题系统
         await initThemeSystem();
 
@@ -249,6 +252,7 @@ async function applyTheme(themeName) {
         const root = document.documentElement;
         const colors = theme.colors;
 
+        // 设置基本颜色变量
         root.style.setProperty('--primary-color', colors.primary);
         root.style.setProperty('--secondary-color', colors.secondary);
         root.style.setProperty('--background-color', colors.background);
@@ -268,6 +272,76 @@ async function applyTheme(themeName) {
             }
         }
 
+        // 应用主题特定的样式变量
+        switch(themeName) {
+            case 'cyberpunk':
+                // 赛博朋克主题特效
+                root.style.setProperty('--theme-border-style', 'solid');
+                root.style.setProperty('--theme-card-shape', 'var(--radius-lg)');
+                root.style.setProperty('--theme-animation-intensity', '1');
+                root.style.setProperty('--theme-font-family', "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif");
+                break;
+                
+            case 'aurora':
+                // 极光主题特效
+                root.style.setProperty('--theme-border-style', 'solid');
+                root.style.setProperty('--theme-card-shape', 'var(--radius-xl)');
+                root.style.setProperty('--theme-animation-intensity', '0.8');
+                root.style.setProperty('--theme-font-family', "'Quicksand', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif");
+                
+                // 添加流动渐变背景
+                document.body.classList.add('aurora-background');
+                break;
+                
+            case 'synthwave':
+                // 合成波主题特效
+                root.style.setProperty('--theme-border-style', 'solid');
+                root.style.setProperty('--theme-card-shape', '0');
+                root.style.setProperty('--theme-animation-intensity', '1.2');
+                root.style.setProperty('--theme-font-family', "'VT323', 'Courier New', monospace");
+                
+                // 添加网格背景
+                document.body.classList.add('synthwave-background');
+                break;
+                
+            case 'matrix':
+                // 矩阵主题特效
+                root.style.setProperty('--theme-border-style', 'dashed');
+                root.style.setProperty('--theme-card-shape', '0');
+                root.style.setProperty('--theme-animation-intensity', '1.5');
+                root.style.setProperty('--theme-font-family', "'Courier New', monospace");
+                
+                // 添加数字雨效果
+                initMatrixEffect();
+                break;
+                
+            case 'neon':
+                // 霓虹主题特效
+                root.style.setProperty('--theme-border-style', 'double');
+                root.style.setProperty('--theme-card-shape', 'var(--radius-sm)');
+                root.style.setProperty('--theme-animation-intensity', '1.3');
+                root.style.setProperty('--theme-font-family', "'Orbitron', sans-serif");
+                
+                // 添加霓虹灯效果
+                document.body.classList.add('neon-background');
+                break;
+        }
+
+        // 移除之前的主题特效类
+        document.body.classList.remove('aurora-background', 'synthwave-background', 'neon-background');
+        
+        // 停止之前的矩阵效果
+        if (window.matrixInterval) {
+            clearInterval(window.matrixInterval);
+            const matrixCanvas = document.getElementById('matrix-canvas');
+            if (matrixCanvas) matrixCanvas.remove();
+        }
+
+        // 如果是矩阵主题，添加矩阵效果
+        if (themeName === 'matrix') {
+            initMatrixEffect();
+        }
+
         window.futuristicNav.currentTheme = themeName;
         localStorage.setItem('homepage-theme', themeName);
 
@@ -278,6 +352,73 @@ async function applyTheme(themeName) {
     }
 
     document.documentElement.setAttribute('data-theme', themeName);
+}
+
+/**
+ * 初始化矩阵数字雨效果
+ */
+function initMatrixEffect() {
+    // 移除旧的矩阵画布
+    const oldCanvas = document.getElementById('matrix-canvas');
+    if (oldCanvas) oldCanvas.remove();
+    
+    // 创建新的矩阵画布
+    const canvas = document.createElement('canvas');
+    canvas.id = 'matrix-canvas';
+    canvas.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        opacity: 0.15;
+        pointer-events: none;
+    `;
+    document.body.appendChild(canvas);
+    
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    
+    // 字符集
+    const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+    const columns = Math.floor(canvas.width / 20);
+    const drops = [];
+    
+    // 初始化每列的Y位置
+    for (let i = 0; i < columns; i++) {
+        drops[i] = Math.random() * -100;
+    }
+    
+    // 绘制矩阵效果
+    function drawMatrix() {
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        
+        ctx.fillStyle = '#00ff41';
+        ctx.font = '15px monospace';
+        
+        for (let i = 0; i < drops.length; i++) {
+            const text = chars[Math.floor(Math.random() * chars.length)];
+            ctx.fillText(text, i * 20, drops[i] * 20);
+            
+            if (drops[i] * 20 > canvas.height && Math.random() > 0.975) {
+                drops[i] = 0;
+            }
+            
+            drops[i]++;
+        }
+    }
+    
+    // 设置定时器
+    window.matrixInterval = setInterval(drawMatrix, 50);
+    
+    // 窗口大小改变时重新调整画布
+    window.addEventListener('resize', () => {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    });
 }
 
 /**
@@ -314,16 +455,69 @@ function createThemeModal() {
                 <button class="theme-modal-close">&times;</button>
             </div>
             <div class="theme-options">
-                ${themes.map(theme => `
-                    <div class="theme-option" data-theme="${theme.name}">
-                        <div class="theme-preview" style="background: linear-gradient(135deg, ${theme.colors.primary}, ${theme.colors.secondary})"></div>
-                        <div class="theme-info">
-                            <h3>${theme.display_name}</h3>
-                            <p>${theme.description || '精美的主题设计'}</p>
-                            ${theme.is_default ? '<span class="theme-badge">默认</span>' : ''}
+                ${themes.map(theme => {
+                    // 根据主题名称设置不同的预览样式
+                    let previewStyle = '';
+                    let previewContent = '';
+                    
+                    switch(theme.name) {
+                        case 'cyberpunk':
+                            previewStyle = `background: linear-gradient(135deg, ${theme.colors.primary}, ${theme.colors.secondary});`;
+                            previewContent = '<div class="preview-neon-line"></div>';
+                            break;
+                        case 'aurora':
+                            previewStyle = `background: linear-gradient(135deg, ${theme.colors.primary}, ${theme.colors.secondary}); backdrop-filter: blur(5px);`;
+                            previewContent = '<div class="preview-aurora-waves"></div>';
+                            break;
+                        case 'synthwave':
+                            previewStyle = `background: linear-gradient(180deg, ${theme.colors.background}, ${theme.colors.primary});`;
+                            previewContent = '<div class="preview-grid"></div>';
+                            break;
+                        case 'matrix':
+                            previewStyle = `background: ${theme.colors.background}; border: 1px dashed ${theme.colors.primary};`;
+                            previewContent = '<div class="preview-code">01</div>';
+                            break;
+                        case 'neon':
+                            previewStyle = `background: ${theme.colors.background}; border: 2px double ${theme.colors.primary};`;
+                            previewContent = '<div class="preview-neon-glow"></div>';
+                            break;
+                        default:
+                            previewStyle = `background: linear-gradient(135deg, ${theme.colors.primary}, ${theme.colors.secondary});`;
+                    }
+                    
+                    // 根据主题名称设置不同的描述
+                    let description = theme.description || '精美的主题设计';
+                    switch(theme.name) {
+                        case 'cyberpunk':
+                            description = '霓虹灯效果，锐利的边缘，高对比度的青色和品红色';
+                            break;
+                        case 'aurora':
+                            description = '流动的渐变效果，柔和的曲线，梦幻般的蓝色和青色调';
+                            break;
+                        case 'synthwave':
+                            description = '复古网格背景，80年代风格，紫色和橙色的强烈对比';
+                            break;
+                        case 'matrix':
+                            description = '数字雨效果，终端风格，黑客美学，绿色代码';
+                            break;
+                        case 'neon':
+                            description = '明亮的对比色，城市夜景风格，红色和绿色的霓虹灯效果';
+                            break;
+                    }
+                    
+                    return `
+                        <div class="theme-option" data-theme="${theme.name}">
+                            <div class="theme-preview" style="${previewStyle}">
+                                ${previewContent}
+                            </div>
+                            <div class="theme-info">
+                                <h3>${theme.display_name}</h3>
+                                <p>${description}</p>
+                                ${theme.is_default ? '<span class="theme-badge">默认</span>' : ''}
+                            </div>
                         </div>
-                    </div>
-                `).join('')}
+                    `;
+                }).join('')}
             </div>
         </div>
     `;
@@ -832,7 +1026,10 @@ function initParticles() {
 
     const ctx = canvas.getContext('2d');
     const particles = [];
-    const particleCount = Math.min(settings.particle_count || 50, window.innerWidth < 768 ? 30 : 80);
+    // 直接使用设置中的粒子数量，不再设置上限
+    const particleCount = parseInt(settings.particle_count) || 50;
+    
+    console.log('粒子数量设置为:', particleCount);
 
     // 设置画布大小
     function resizeCanvas() {
@@ -973,6 +1170,41 @@ function showError(message) {
     setTimeout(() => {
         errorDiv.remove();
     }, 5000);
+}
+
+/**
+ * 更新网站元数据（标题和描述）
+ */
+function updateSiteMetadata() {
+    const settings = window.futuristicNav.config.settings;
+    if (!settings) return;
+    
+    // 更新页面标题
+    const pageTitle = document.getElementById('page-title');
+    if (pageTitle && settings.site_title) {
+        pageTitle.textContent = settings.site_title;
+        document.title = settings.site_title;
+    }
+    
+    // 更新Open Graph标题
+    const ogTitle = document.getElementById('og-title');
+    if (ogTitle && settings.site_title) {
+        ogTitle.setAttribute('content', settings.site_title);
+    }
+    
+    // 更新页面描述
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription && settings.site_description) {
+        metaDescription.setAttribute('content', settings.site_description);
+    }
+    
+    // 更新Open Graph描述
+    const ogDescription = document.getElementById('og-description');
+    if (ogDescription && settings.site_description) {
+        ogDescription.setAttribute('content', settings.site_description);
+    }
+    
+    console.log('✅ 网站元数据已更新:', settings.site_title, settings.site_description);
 }
 
 /**

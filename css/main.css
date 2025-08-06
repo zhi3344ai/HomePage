@@ -3,452 +3,503 @@
 /* CSS Variables and Theme System */
 :root {
   /* Cyberpunk Theme (Default) */
-  --primary-color: #00f5ff;
-  --secondary-color: #ff0080;
-  --background-color: #0a0a0a;
-  --surface-color: rgba(255, 255, 255, 0.05);
-  --text-primary: #ffffff;
-  --text-secondary: #cccccc;
-  --text-muted: #888888;
-  --accent-gradient: linear-gradient(135deg, #00f5ff 0%, #ff0080 100%);
-  --glass-bg: rgba(255, 255, 255, 0.1);
-  --glass-border: rgba(255, 255, 255, 0.2);
+  --primary-color: #00f5ff; /* 主色调：青色 */
+  --secondary-color: #ff0080; /* 次要色调：品红色 */
+  --background-color: #0a0a0a; /* 背景色：深黑色 */
+  --surface-color: rgba(255, 255, 255, 0.05); /* 表面色：半透明白色 */
+  --text-primary: #ffffff; /* 主要文字颜色：白色 */
+  --text-secondary: #cccccc; /* 次要文字颜色：浅灰色 */
+  --text-muted: #888888; /* 弱化文字颜色：中灰色 */
+  --accent-gradient: linear-gradient(135deg, #00f5ff 0%, #ff0080 100%); /* 强调渐变：从青色到品红色 */
+  --glass-bg: rgba(255, 255, 255, 0.1); /* 玻璃背景：半透明白色 */
+  --glass-border: rgba(255, 255, 255, 0.2); /* 玻璃边框：半透明白色 */
   
   /* Spacing System */
-  --space-xs: 8px;
-  --space-sm: 16px;
-  --space-md: 24px;
-  --space-lg: 32px;
-  --space-xl: 48px;
-  --space-2xl: 64px;
+  --space-xs: 8px; /* 超小间距：8像素 */
+  --space-sm: 16px; /* 小间距：16像素 */
+  --space-md: 24px; /* 中等间距：24像素 */
+  --space-lg: 32px; /* 大间距：32像素 */
+  --space-xl: 48px; /* 超大间距：48像素 */
+  --space-2xl: 64px; /* 特大间距：64像素 */
   
   /* Typography */
-  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-size-xs: 12px;
-  --font-size-sm: 14px;
-  --font-size-base: 16px;
-  --font-size-lg: 18px;
-  --font-size-xl: 24px;
-  --font-size-2xl: 32px;
-  --font-size-3xl: 48px;
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* 字体族：Inter优先，后备系统字体 */
+  --font-size-xs: 12px; /* 超小字体：12像素 */
+  --font-size-sm: 14px; /* 小字体：14像素 */
+  --font-size-base: 16px; /* 基础字体：16像素 */
+  --font-size-lg: 18px; /* 大字体：18像素 */
+  --font-size-xl: 24px; /* 超大字体：24像素 */
+  --font-size-2xl: 32px; /* 特大字体：32像素 */
+  --font-size-3xl: 48px; /* 巨大字体：48像素 */
   
   /* Shadows */
-  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
-  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.2);
-  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.3);
-  --shadow-glow: 0 0 20px rgba(0, 245, 255, 0.3);
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1); /* 小阴影：轻微投影 */
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.2); /* 中等阴影：中等投影 */
+  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.3); /* 大阴影：明显投影 */
+  --shadow-glow: 0 0 20px rgba(0, 245, 255, 0.3); /* 发光阴影：青色光晕效果 */
   
   /* Border Radius */
-  --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 16px;
-  --radius-xl: 24px;
+  --radius-sm: 8px; /* 小圆角：8像素 */
+  --radius-md: 12px; /* 中等圆角：12像素 */
+  --radius-lg: 16px; /* 大圆角：16像素 */
+  --radius-xl: 24px; /* 超大圆角：24像素 */
   
   /* Transitions */
-  --transition-fast: 0.15s ease;
-  --transition-normal: 0.3s ease;
-  --transition-slow: 0.6s ease;
+  --transition-fast: 0.15s ease; /* 快速过渡：0.15秒缓动 */
+  --transition-normal: 0.3s ease; /* 正常过渡：0.3秒缓动 */
+  --transition-slow: 0.6s ease; /* 慢速过渡：0.6秒缓动 */
 }
 
 /* Reset and Base Styles */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  margin: 0; /* 重置所有元素外边距为0 */
+  padding: 0; /* 重置所有元素内边距为0 */
+  box-sizing: border-box; /* 设置盒模型为边框盒模型 */
 }
 
 html {
-  font-size: 16px;
-  scroll-behavior: smooth;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-  box-sizing: border-box;
+  font-size: 16px; /* 根字体大小设置为16像素 */
+  scroll-behavior: smooth; /* 平滑滚动行为 */
+  margin: 0; /* HTML元素外边距为0 */
+  padding: 0; /* HTML元素内边距为0 */
+  width: 100%; /* HTML元素宽度100% */
+  height: 100%; /* HTML元素高度100% */
+  box-sizing: border-box; /* HTML元素使用边框盒模型 */
 }
 
 body {
-  font-family: var(--font-family);
-  background: var(--background-color);
-  color: var(--text-primary);
-  line-height: 1.6;
-  overflow-x: hidden;
-  min-height: 100vh;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  box-sizing: border-box;
+  font-family: var(--font-family); /* 使用定义的字体族 */
+  background: var(--background-color); /* 使用定义的背景色 */
+  color: var(--text-primary); /* 使用定义的主要文字颜色 */
+  line-height: 1.6; /* 行高设置为1.6倍 */
+  overflow-x: hidden; /* 隐藏水平滚动条 */
+  min-height: 100vh; /* 最小高度为视口高度 */
+  margin: 0; /* 外边距为0 */
+  padding: 0; /* 内边距为0 */
+  width: 100%; /* 宽度100% */
+  box-sizing: border-box; /* 使用边框盒模型 */
 }
 
 /* Background Effects */
 .original-background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  overflow: hidden;
+  position: fixed; /* 固定定位，相对于视口 */
+  top: 0; /* 距离顶部0像素 */
+  left: 0; /* 距离左侧0像素 */
+  width: 100%; /* 宽度100% */
+  height: 100%; /* 高度100% */
+  z-index: -1; /* 层级为-1，置于最底层 */
+  overflow: hidden; /* 隐藏溢出内容 */
 }
 
 .original-gradient {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle at 20% 50%, rgba(0, 245, 255, 0.1) 0%, transparent 50%),
-              radial-gradient(circle at 80% 20%, rgba(255, 0, 128, 0.1) 0%, transparent 50%),
-              radial-gradient(circle at 40% 80%, rgba(79, 172, 254, 0.1) 0%, transparent 50%);
+  position: absolute; /* 绝对定位 */
+  top: 0; /* 距离顶部0像素 */
+  left: 0; /* 距离左侧0像素 */
+  width: 100%; /* 宽度100% */
+  height: 100%; /* 高度100% */
+  background: radial-gradient(circle at 20% 50%, rgba(0, 245, 255, 0.1) 0%, transparent 50%), /* 左侧青色径向渐变 */
+              radial-gradient(circle at 80% 20%, rgba(255, 0, 128, 0.1) 0%, transparent 50%), /* 右上品红色径向渐变 */
+              radial-gradient(circle at 40% 80%, rgba(79, 172, 254, 0.1) 0%, transparent 50%); /* 左下蓝色径向渐变 */
 }
 
 .original-circle {
-  position: absolute;
-  border: 1px solid var(--glass-border);
-  border-radius: 50%;
-  opacity: 0.3;
-  animation: float 6s ease-in-out infinite;
+  position: absolute; /* 绝对定位 */
+  border: 1px solid var(--glass-border); /* 1像素实线边框，使用玻璃边框颜色 */
+  border-radius: 50%; /* 圆角50%，形成圆形 */
+  opacity: 0.3; /* 透明度30% */
+  animation: float 6s ease-in-out infinite; /* 浮动动画，6秒循环，缓入缓出，无限循环 */
 }
 
 .original-circle-1 {
-  width: 200px;
-  height: 200px;
-  top: 10%;
-  left: 10%;
-  animation-delay: 0s;
+  width: 200px; /* 第一个圆形宽度200像素 */
+  height: 200px; /* 第一个圆形高度200像素 */
+  top: 10%; /* 距离顶部10% */
+  left: 10%; /* 距离左侧10% */
+  animation-delay: 0s; /* 动画延迟0秒 */
 }
 
 .original-circle-2 {
-  width: 150px;
-  height: 150px;
-  top: 60%;
-  right: 20%;
-  animation-delay: 2s;
+  width: 150px; /* 第二个圆形宽度150像素 */
+  height: 150px; /* 第二个圆形高度150像素 */
+  top: 60%; /* 距离顶部60% */
+  right: 20%; /* 距离右侧20% */
+  animation-delay: 2s; /* 动画延迟2秒 */
 }
 
 .original-circle-3 {
-  width: 100px;
-  height: 100px;
-  bottom: 20%;
-  left: 60%;
-  animation-delay: 4s;
+  width: 100px; /* 第三个圆形宽度100像素 */
+  height: 100px; /* 第三个圆形高度100像素 */
+  bottom: 20%; /* 距离底部20% */
+  left: 60%; /* 距离左侧60% */
+  animation-delay: 4s; /* 动画延迟4秒 */
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-20px) rotate(180deg); }
+  0%, 100% { transform: translateY(0px) rotate(0deg); } /* 动画开始和结束：无位移和旋转 */
+  50% { transform: translateY(-20px) rotate(180deg); } /* 动画中点：向上移动20像素，旋转180度 */
 }
 
 /* Particles Canvas */
 #particles-canvas {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
+  position: absolute; /* 绝对定位 */
+  top: 0; /* 距离顶部0像素 */
+  left: 0; /* 距离左侧0像素 */
+  width: 100%; /* 宽度100% */
+  height: 100%; /* 高度100% */
+  pointer-events: none; /* 禁用鼠标事件，不阻挡下层元素交互 */
 }
 
 /* Main Container */
 .main-container {
-  position: relative;
-  z-index: 1;
-  height: 100vh;
-  width: 100%;
-  max-width: 100%;
-  padding: 0;
+  position: relative; /* 相对定位 */
+  z-index: 1; /* 层级为1，位于背景之上 */
+  height: 100vh; /* 高度为视口高度 */
+  width: 100%; /* 宽度100% */
+  max-width: 100%; /* 最大宽度100% */
+  padding: 0; /* 内边距为0 */
   margin: 0 auto; /* 修改为auto，让浏览器自动处理居中 */
-  display: flex;
-  flex-direction: column;
+  display: flex; /* 使用弹性布局 */
+  flex-direction: column; /* 垂直排列 */
   align-items: center; /* 修改为center，确保内容居中 */
-  justify-content: flex-start;
-  overflow: hidden;
-  box-sizing: border-box;
+  justify-content: flex-start; /* 主轴起始对齐 */
+  overflow: hidden; /* 隐藏溢出内容 */
+  box-sizing: border-box; /* 使用边框盒模型 */
 }
 
 /* 左右分栏布局 */
 .split-layout {
-  display: flex;
-  width: 100%;
-  height: 100vh;
-  overflow: visible;
-  max-width: 100%;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  display: flex; /* 使用弹性布局 */
+  width: 100%; /* 宽度100% */
+  height: 100vh; /* 高度为视口高度 */
+  overflow: visible; /* 显示溢出内容 */
+  max-width: 100%; /* 最大宽度100% */
+  margin: 0; /* 外边距为0 */
+  padding: 0; /* 内边距为0 */
+  box-sizing: border-box; /* 使用边框盒模型 */
   position: fixed; /* 固定定位，与original-background一致 */
-  top: 0;
-  left: 0;
+  top: 0; /* 距离顶部0像素 */
+  left: 0; /* 距离左侧0像素 */
 }
 
-/* Theme Switcher - 已隐藏，仅后台可更换主题 */
+/* Theme Switcher */
 .theme-switcher {
-  display: none; /* 隐藏主题切换器 */
+  position: fixed; /* 固定定位 */
+  top: var(--space-lg); /* 距离顶部大号间距 */
+  right: var(--space-lg); /* 距离右侧大号间距 */
+  z-index: 100; /* 层级为100 */
+}
+
+.theme-btn {
+  width: 40px; /* 按钮宽度 */
+  height: 40px; /* 按钮高度 */
+  border-radius: 50%; /* 圆形按钮 */
+  background: var(--glass-bg); /* 玻璃效果背景 */
+  backdrop-filter: blur(10px); /* 背景模糊 */
+  border: 1px solid var(--glass-border); /* 边框 */
+  display: flex; /* 弹性布局 */
+  align-items: center; /* 垂直居中 */
+  justify-content: center; /* 水平居中 */
+  cursor: pointer; /* 鼠标指针 */
+  transition: all var(--transition-normal); /* 过渡效果 */
+  box-shadow: var(--shadow-md); /* 阴影效果 */
+  position: relative; /* 相对定位 */
+  overflow: hidden; /* 隐藏溢出内容 */
+}
+
+.theme-btn:hover {
+  transform: scale(1.1); /* 悬停时放大 */
+  box-shadow: var(--shadow-glow); /* 悬停时发光 */
+}
+
+.theme-icon {
+  position: relative; /* 相对定位 */
+  width: 20px; /* 图标宽度 */
+  height: 20px; /* 图标高度 */
+  border-radius: 50%; /* 圆形 */
+  background: linear-gradient(45deg, var(--primary-color) 0%, var(--secondary-color) 100%); /* 渐变背景 */
+  box-shadow: 0 0 10px var(--primary-color); /* 发光效果 */
+}
+
+.theme-icon::before {
+  content: ''; /* 伪元素内容 */
+  position: absolute; /* 绝对定位 */
+  top: 0; /* 顶部对齐 */
+  left: 50%; /* 水平居中 */
+  width: 10px; /* 宽度 */
+  height: 10px; /* 高度 */
+  background: var(--background-color); /* 背景色 */
+  border-radius: 50%; /* 圆形 */
+  transform: translate(-50%, -50%) scale(0); /* 初始缩放为0 */
+  animation: pulseTheme 2s infinite ease-in-out; /* 脉冲动画 */
+}
+
+@keyframes pulseTheme {
+  0%, 100% { transform: translate(-50%, -50%) scale(0); }
+  50% { transform: translate(-50%, -50%) scale(1); }
 }
 
 /* Profile Section */
 .profile-section {
-  text-align: center;
-  width: 600px;
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: var(--space-lg);
-  height: 100vh;
-  overflow: hidden;
+  text-align: center; /* 文本居中对齐 */
+  width: 600px; /* 宽度固定为600像素 */
+  flex-shrink: 0; /* 不允许收缩 */
+  display: flex; /* 使用弹性布局 */
+  align-items: center; /* 垂直居中对齐 */
+  justify-content: center; /* 水平居中对齐 */
+  padding: var(--space-lg); /* 内边距使用大号间距 */
+  height: 100vh; /* 高度为视口高度 */
+  overflow: hidden; /* 隐藏溢出内容 */
   transform: translateX(200px); /* 个人信息部分整体向右移动200px */
 }
 
 .profile-card {
-  background: var(--glass-bg);
-  backdrop-filter: blur(20px);
-  border: 1px solid var(--glass-border);
-  border-radius: var(--radius-xl);
-  padding: var(--space-xl);
-  box-shadow: var(--shadow-lg);
-  transition: all var(--transition-normal);
-  width: calc(90% + 200px);
-  max-width: 650px;
-  height: calc(500px + 350px);
+  background: var(--glass-bg); /* 背景使用玻璃效果 */
+  backdrop-filter: blur(20px); /* 背景模糊20像素 */
+  border: 1px solid var(--glass-border); /* 1像素实线边框，使用玻璃边框颜色 */
+  border-radius: var(--radius-xl); /* 圆角使用超大号 */
+  padding: var(--space-xl); /* 内边距使用超大号间距 */
+  box-shadow: var(--shadow-lg); /* 阴影使用大号 */
+  transition: all var(--transition-normal); /* 所有属性使用正常过渡时间 */
+  width: calc(90% + 200px); /* 宽度为90%加200像素 */
+  max-width: 650px; /* 最大宽度650像素 */
+  height: calc(500px + 350px); /* 高度为500像素加350像素 */
   max-height: none; /* 移除最大高度限制 */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  transform: scale(1.2);
-  transform-origin: center;
+  display: flex; /* 使用弹性布局 */
+  flex-direction: column; /* 垂直排列 */
+  justify-content: center; /* 主轴居中对齐 */
+  transform: scale(1.2); /* 缩放1.2倍 */
+  transform-origin: center; /* 变换原点为中心 */
 }
 
 .profile-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-glow);
+  transform: translateY(-5px); /* 悬停时向上移动5像素 */
+  box-shadow: var(--shadow-glow); /* 悬停时使用发光阴影 */
 }
 
 .profile-avatar {
-  position: relative;
-  width: 120px;
-  height: 120px;
-  margin: 0 auto var(--space-lg); /* 减少下方间距 */
+  position: relative; /* 相对定位 */
+  width: 120px; /* 宽度120像素 */
+  height: 120px; /* 高度120像素 */
+  margin: 0 auto var(--space-xs); /* 减少下方间距 */
 }
 
 .profile-avatar img {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid var(--primary-color);
+  width: 100%; /* 图片宽度100% */
+  height: 100%; /* 图片高度100% */
+  border-radius: 50%; /* 圆角50%，形成圆形 */
+  object-fit: cover; /* 图片裁剪适应容器 */
+  border: 3px solid var(--primary-color); /* 3像素实线边框，使用主色调 */
 }
 
 .avatar-glow {
-  position: absolute;
-  top: -10px;
-  left: -10px;
-  right: -10px;
-  bottom: -10px;
-  border-radius: 50%;
-  background: var(--accent-gradient);
-  opacity: 0.3;
-  filter: blur(20px);
-  z-index: -1;
-  animation: pulse 2s ease-in-out infinite;
+  position: absolute; /* 绝对定位 */
+  top: -10px; /* 距离顶部-10像素 */
+  left: -10px; /* 距离左侧-10像素 */
+  right: -10px; /* 距离右侧-10像素 */
+  bottom: -10px; /* 距离底部-10像素 */
+  border-radius: 50%; /* 圆角50%，形成圆形 */
+  background: var(--accent-gradient); /* 背景使用强调渐变 */
+  opacity: 0.3; /* 透明度30% */
+  filter: blur(20px); /* 模糊20像素 */
+  z-index: -1; /* 层级为-1，置于头像下方 */
+  animation: pulse 2s ease-in-out infinite; /* 脉冲动画，2秒循环，缓入缓出，无限循环 */
 }
 
 @keyframes pulse {
-  0%, 100% { opacity: 0.3; transform: scale(1); }
-  50% { opacity: 0.6; transform: scale(1.1); }
+  0%, 100% { opacity: 0.3; transform: scale(1); } /* 动画开始和结束：透明度30%，正常大小 */
+  50% { opacity: 0.6; transform: scale(1.1); } /* 动画中点：透明度60%，放大1.1倍 */
 }
 
 .profile-status {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-xs);
-  margin-bottom: var(--space-sm);
+  display: flex; /* 使用弹性布局 */
+  align-items: center; /* 垂直居中对齐 */
+  justify-content: center; /* 水平居中对齐 */
+  gap: var(--space-xs); /* 元素间距使用超小号 */
+  margin-bottom: var(--space-sm); /* 下边距使用小号间距 */
 }
 
 .status-indicator {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #00ff00;
-  animation: blink 2s ease-in-out infinite;
+  width: 8px; /* 宽度8像素 */
+  height: 8px; /* 高度8像素 */
+  border-radius: 50%; /* 圆角50%，形成圆形 */
+  background: #00ff00; /* 背景色为绿色 */
+  animation: blink 2s ease-in-out infinite; /* 闪烁动画，2秒循环，缓入缓出，无限循环 */
 }
 
 @keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.3; }
+  0%, 100% { opacity: 1; } /* 动画开始和结束：完全不透明 */
+  50% { opacity: 0.3; } /* 动画中点：透明度30% */
 }
 
 .profile-name {
-  font-size: var(--font-size-2xl);
-  font-weight: 700;
+  font-size: var(--font-size-2xl); /* 字体大小使用特大号 */
+  font-weight: 700; /* 字体粗细为700（粗体） */
   margin-bottom: var(--space-md); /* 减少下方间距 */
-  background: var(--accent-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  background: var(--accent-gradient); /* 背景使用强调渐变 */
+  -webkit-background-clip: text; /* WebKit浏览器背景裁剪为文字 */
+  -webkit-text-fill-color: transparent; /* WebKit浏览器文字填充色透明 */
+  background-clip: text; /* 背景裁剪为文字 */
 }
 
 .profile-title {
-  font-size: var(--font-size-xl);
-  color: var(--text-secondary);
+  font-size: var(--font-size-xl); /* 字体大小使用超大号 */
+  color: var(--text-secondary); /* 颜色使用次要文字色 */
   margin-bottom: var(--space-md); /* 减少下方间距 */
 }
 
 .profile-description {
-  color: var(--text-muted);
+  color: var(--text-muted); /* 颜色使用弱化文字色 */
   margin-bottom: var(--space-lg); /* 减少下方间距 */
-  line-height: 1.6;
-  font-size: var(--font-size-base);
+  line-height: 1.6; /* 行高1.6倍 */
+  font-size: var(--font-size-base); /* 字体大小使用基础大小 */
   max-width: 80%; /* 保留宽度限制，使文本更易读 */
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: auto; /* 左边距自动 */
+  margin-right: auto; /* 右边距自动 */
 }
 
 .profile-stats {
-  display: flex;
-  justify-content: center;
+  display: flex; /* 使用弹性布局 */
+  justify-content: center; /* 水平居中对齐 */
   gap: var(--space-xl); /* 减少统计项之间的间距 */
   margin-bottom: var(--space-lg); /* 减少下方间距 */
 }
 
 .stat-item {
-  text-align: center;
+  text-align: center; /* 文本居中对齐 */
 }
 
 .stat-number {
-  display: block;
-  font-size: var(--font-size-2xl);
-  font-weight: 700;
-  color: var(--primary-color);
+  display: block; /* 块级显示 */
+  font-size: var(--font-size-2xl); /* 字体大小使用特大号 */
+  font-weight: 700; /* 字体粗细为700（粗体） */
+  color: var(--primary-color); /* 颜色使用主色调 */
   margin-bottom: var(--space-sm); /* 减少数字和标签之间的间距 */
 }
 
 .stat-label {
-  font-size: var(--font-size-base);
-  color: var(--text-muted);
+  font-size: var(--font-size-base); /* 字体大小使用基础大小 */
+  color: var(--text-muted); /* 颜色使用弱化文字色 */
 }
 
 .social-links {
-  display: flex;
-  justify-content: center;
+  display: flex; /* 使用弹性布局 */
+  justify-content: center; /* 水平居中对齐 */
   gap: var(--space-lg); /* 减少社交链接之间的间距 */
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* 允许换行 */
   margin-top: var(--space-md); /* 减少顶部间距 */
 }
 
 .social-link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background: var(--glass-bg);
+  display: flex; /* 使用弹性布局 */
+  align-items: center; /* 垂直居中对齐 */
+  justify-content: center; /* 水平居中对齐 */
+  width: 60px; /* 宽度60像素 */
+  height: 60px; /* 高度60像素 */
+  border-radius: 50%; /* 圆角50%，形成圆形 */
+  background: var(--glass-bg); /* 背景使用玻璃效果 */
   border: 1px solid var(--glass-border); /* 恢复原来的边框粗细 */
-  color: var(--text-primary);
-  text-decoration: none;
+  color: var(--text-primary); /* 颜色使用主要文字色 */
+  text-decoration: none; /* 移除文本装饰 */
   font-size: 24px; /* 恢复原来的图标大小 */
-  transition: all var(--transition-normal);
+  transition: all var(--transition-normal); /* 所有属性使用正常过渡时间 */
 }
 
 .social-link:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-glow);
+  transform: translateY(-3px); /* 悬停时向上移动3像素 */
+  box-shadow: var(--shadow-glow); /* 悬停时使用发光阴影 */
 }
 
 /* Navigation Section */
 .navigation-section {
-  width: calc(100% - 500px);
-  flex-grow: 1;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  padding: var(--space-xl);
-  height: 100vh;
-  overflow: visible;
-  box-sizing: border-box;
+  width: calc(100% - 500px); /* 宽度为100%减去500像素 */
+  flex-grow: 1; /* 允许增长占据剩余空间 */
+  display: flex; /* 使用弹性布局 */
+  align-items: center; /* 垂直居中对齐 */
+  justify-content: flex-start; /* 水平起始对齐 */
+  padding: var(--space-xl); /* 内边距使用超大号间距 */
+  height: 100vh; /* 高度为视口高度 */
+  overflow: visible; /* 显示溢出内容 */
+  box-sizing: border-box; /* 使用边框盒模型 */
 }
 
 .nav-container {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: var(--space-md);
-  width: 100%;
-  max-width: none;
-  height: auto;
-  overflow: visible;
+  display: flex; /* 使用弹性布局 */
+  flex-direction: column; /* 垂直排列 */
+  align-items: flex-start; /* 左对齐 */
+  gap: var(--space-md); /* 元素间距使用中号 */
+  width: 100%; /* 宽度100% */
+  max-width: none; /* 无最大宽度限制 */
+  height: auto; /* 高度自动 */
+  overflow: visible; /* 显示溢出内容 */
 }
 
 .nav-header {
-  display: flex;
-  align-items: center;
-  gap: var(--space-md);
-  width: 100%;
-  max-width: 600px;
+  display: flex; /* 使用弹性布局 */
+  align-items: center; /* 垂直居中对齐 */
+  gap: var(--space-md); /* 元素间距使用中号 */
+  width: 100%; /* 宽度100% */
+  max-width: 600px; /* 最大宽度600像素 */
 }
 
 .nav-line {
-  flex: 1;
-  height: 1px;
-  background: var(--accent-gradient);
-  opacity: 0.5;
+  flex: 1; /* 占据剩余空间 */
+  height: 1px; /* 高度1像素 */
+  background: var(--accent-gradient); /* 背景使用强调渐变 */
+  opacity: 0.5; /* 透明度50% */
 }
 
 .nav-title {
-  font-size: var(--font-size-xl);
-  font-weight: 600;
-  white-space: nowrap;
-  background: var(--accent-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  font-size: var(--font-size-xl); /* 字体大小使用超大号 */
+  font-weight: 600; /* 字体粗细为600（半粗体） */
+  white-space: nowrap; /* 不换行 */
+  background: var(--accent-gradient); /* 背景使用强调渐变 */
+  -webkit-background-clip: text; /* WebKit浏览器背景裁剪为文字 */
+  -webkit-text-fill-color: transparent; /* WebKit浏览器文字填充色透明 */
+  background-clip: text; /* 背景裁剪为文字 */
 }
 
 .nav-grid {
-  display: grid;
+  display: grid; /* 使用网格布局 */
   grid-template-columns: repeat(3, 350px); /* 固定宽度的列 */
-  gap: var(--space-md);
+  gap: var(--space-md); /* 网格间距使用中号 */
   width: fit-content; /* 适应内容宽度 */
-  height: auto;
-  overflow: visible;
+  height: auto; /* 高度自动 */
+  overflow: visible; /* 显示溢出内容 */
   margin: 0 auto; /* 居中显示 */
   transform-origin: center; /* 从中心缩放 */
   transform: translateX(100px); /* 整体向右移动100px */
 }
 
 .nav-category {
-  background: var(--glass-bg);
-  backdrop-filter: blur(20px);
-  border: 1px solid var(--glass-border);
-  border-radius: var(--radius-lg);
-  padding: 20px var(--space-xl) var(--space-xl) var(--space-xl); /* 减少顶部内边距为20px */
-  transition: all var(--transition-normal);
-  display: flex;
-  flex-direction: column;
-  height: 520px;
+  background: var(--glass-bg); /* 背景使用玻璃效果 */
+  backdrop-filter: blur(20px); /* 背景模糊20像素 */
+  border: 1px solid var(--glass-border); /* 1像素实线边框，使用玻璃边框颜色 */
+  border-radius: var(--radius-lg); /* 圆角使用大号 */
+  padding: 18px var(--space-md) var(--space-md) var(--space-md); /* 减少顶部内边距为20px */
+  transition: all var(--transition-normal); /* 所有属性使用正常过渡时间 */
+  display: flex; /* 使用弹性布局 */
+  flex-direction: column; /* 垂直排列 */
+  height: 520px; /* 高度520像素 */
   width: 430px; /* 固定宽度 */
-  transform-origin: center;
-  z-index: 1;
+  transform-origin: center; /* 变换原点为中心 */
+  z-index: 1; /* 层级为1 */
   box-sizing: border-box; /* 确保padding不会改变总尺寸 */
 }
 
 .nav-category:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-glow);
+  transform: translateY(-5px); /* 悬停时向上移动5像素 */
+  box-shadow: var(--shadow-glow); /* 悬停时使用发光阴影 */
 }
 
 .category-header {
-  display: flex;
-  align-items: center;
+  display: flex; /* 使用弹性布局 */
+  align-items: center; /* 垂直居中对齐 */
   justify-content: center; /* 水平居中 */
-  gap: var(--space-md);
-  margin-bottom: var(--space-md);
+  gap: var(--space-md); /* 元素间距使用中号 */
+  margin-bottom: var(--space-md); /* 下边距使用中号间距 */
   padding-top: 0; /* 移除顶部内边距 */
   width: 100%; /* 确保宽度占满整个容器 */
 }
-
 
 .category-icon {
   font-size: 26px; /* 从30px减小2px */
@@ -456,393 +507,393 @@ body {
 
 .category-name {
   font-size: 20px; /* 从24px(--font-size-xl)减小2px */
-  font-weight: 600;
-  color: var(--text-primary);
+  font-weight: 600; /* 字体粗细为600（半粗体） */
+  color: var(--text-primary); /* 颜色使用主要文字色 */
 }
 
 .nav-items {
-  display: grid;
-  gap: var(--space-xs);
+  display: grid; /* 使用网格布局 */
+  gap: var(--space-xs); /* 网格间距使用超小号 */
 }
 
 .nav-item {
-  display: flex;
-  align-items: center;
-  gap: var(--space-sm);
-  padding: 12px var(--space-md);
-  border-radius: var(--radius-md);
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid transparent;
-  text-decoration: none;
-  color: var(--text-primary);
-  transition: all var(--transition-normal);
-  margin-bottom: 8px;
+  display: flex; /* 使用弹性布局 */
+  align-items: center; /* 垂直居中对齐 */
+  gap: var(--space-sm); /* 元素间距使用小号 */
+  padding: 12px var(--space-md); /* 内边距：上下12像素，左右中号间距 */
+  border-radius: var(--radius-md); /* 圆角使用中号 */
+  background: rgba(255, 255, 255, 0.02); /* 背景为半透明白色 */
+  border: 1px solid transparent; /* 1像素透明边框 */
+  text-decoration: none; /* 移除文本装饰 */
+  color: var(--text-primary); /* 颜色使用主要文字色 */
+  transition: all var(--transition-normal); /* 所有属性使用正常过渡时间 */
+  margin-bottom: 8px; /* 下边距8像素 */
 }
 
 .nav-item:hover {
-  background: var(--surface-color);
-  border-color: var(--glass-border);
-  transform: translateX(5px);
+  background: var(--surface-color); /* 悬停时背景使用表面颜色 */
+  border-color: var(--glass-border); /* 悬停时边框颜色使用玻璃边框色 */
+  transform: translateX(5px); /* 悬停时向右移动5像素 */
 }
 
 .nav-item-icon {
   font-size: 24px; /* 从28px减小2px */
-  width: 40px;
-  text-align: center;
+  width: 40px; /* 宽度40像素 */
+  text-align: center; /* 文本居中对齐 */
 }
 
 .nav-item-content {
-  flex: 1;
+  flex: 1; /* 占据剩余空间 */
 }
 
 .nav-item-name {
-  font-weight: 500;
-  margin-bottom: 6px;
+  font-weight: 500; /* 字体粗细为500（中等） */
+  margin-bottom: 6px; /* 下边距6像素 */
   font-size: 14px; /* 从18px(--font-size-lg)减小2px */
 }
 
 .nav-item-description {
   font-size: 10px; /* 从14px(--font-size-sm)减小2px */
-  color: var(--text-muted);
-  line-height: 1.4;
+  color: var(--text-muted); /* 颜色使用弱化文字色 */
+  line-height: 1.4; /* 行高1.4倍 */
 }
 
 /* Loading Screen */
 .loading-screen {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: var(--background-color);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-  transition: opacity var(--transition-slow);
+  position: fixed; /* 固定定位 */
+  top: 0; /* 距离顶部0像素 */
+  left: 0; /* 距离左侧0像素 */
+  width: 100%; /* 宽度100% */
+  height: 100%; /* 高度100% */
+  background: var(--background-color); /* 背景使用背景色 */
+  display: flex; /* 使用弹性布局 */
+  align-items: center; /* 垂直居中对齐 */
+  justify-content: center; /* 水平居中对齐 */
+  z-index: 9999; /* 层级为9999，置于最顶层 */
+  transition: opacity var(--transition-slow); /* 透明度使用慢速过渡 */
 }
 
 .loading-screen.hidden {
-  opacity: 0;
-  pointer-events: none;
+  opacity: 0; /* 隐藏时透明度为0 */
+  pointer-events: none; /* 隐藏时禁用鼠标事件 */
 }
 
 .loading-content {
-  text-align: center;
+  text-align: center; /* 文本居中对齐 */
 }
 
 .loading-spinner {
-  width: 50px;
-  height: 50px;
-  border: 3px solid var(--glass-border);
-  border-top: 3px solid var(--primary-color);
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-  margin: 0 auto var(--space-md);
+  width: 50px; /* 宽度50像素 */
+  height: 50px; /* 高度50像素 */
+  border: 3px solid var(--glass-border); /* 3像素实线边框，使用玻璃边框色 */
+  border-top: 3px solid var(--primary-color); /* 顶部边框使用主色调 */
+  border-radius: 50%; /* 圆角50%，形成圆形 */
+  animation: spin 1s linear infinite; /* 旋转动画，1秒线性无限循环 */
+  margin: 0 auto var(--space-md); /* 外边距：上下0，左右自动，下方中号间距 */
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% { transform: rotate(0deg); } /* 动画开始：旋转0度 */
+  100% { transform: rotate(360deg); } /* 动画结束：旋转360度 */
 }
 
 .loading-text {
-  color: var(--text-secondary);
-  margin-bottom: var(--space-md);
+  color: var(--text-secondary); /* 颜色使用次要文字色 */
+  margin-bottom: var(--space-md); /* 下边距使用中号间距 */
 }
 
 .loading-progress-bar {
-  width: 200px;
-  height: 4px;
-  background: var(--glass-border);
-  border-radius: 2px;
-  overflow: hidden;
-  margin: 0 auto;
+  width: 200px; /* 宽度200像素 */
+  height: 4px; /* 高度4像素 */
+  background: var(--glass-border); /* 背景使用玻璃边框色 */
+  border-radius: 2px; /* 圆角2像素 */
+  overflow: hidden; /* 隐藏溢出内容 */
+  margin: 0 auto; /* 外边距：上下0，左右自动居中 */
 }
 
 .loading-progress {
-  height: 100%;
-  background: var(--accent-gradient);
-  width: 0%;
-  transition: width var(--transition-normal);
+  height: 100%; /* 高度100% */
+  background: var(--accent-gradient); /* 背景使用强调渐变 */
+  width: 0%; /* 初始宽度0% */
+  transition: width var(--transition-normal); /* 宽度使用正常过渡时间 */
 }
 
 /* Animations */
 .animate-on-load {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all var(--transition-slow);
+  opacity: 0; /* 初始透明度为0 */
+  transform: translateY(20px); /* 初始向下偏移20像素 */
+  transition: all var(--transition-slow); /* 所有属性使用慢速过渡 */
 }
 
 .animate-on-load.visible {
-  opacity: 1;
-  transform: translateY(0);
+  opacity: 1; /* 可见时透明度为1 */
+  transform: translateY(0); /* 可见时无偏移 */
 }
 
 .animate-fade-in {
-  animation: fadeIn var(--transition-slow) ease forwards;
+  animation: fadeIn var(--transition-slow) ease forwards; /* 淡入动画，慢速缓动，保持最终状态 */
 }
 
 .animate-slide-up {
-  animation: slideUp var(--transition-slow) ease forwards;
+  animation: slideUp var(--transition-slow) ease forwards; /* 向上滑动动画，慢速缓动，保持最终状态 */
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from { opacity: 0; } /* 动画开始：透明度0 */
+  to { opacity: 1; } /* 动画结束：透明度1 */
 }
 
 @keyframes slideUp {
   from { 
-    opacity: 0;
-    transform: translateY(30px);
+    opacity: 0; /* 动画开始：透明度0 */
+    transform: translateY(30px); /* 动画开始：向下偏移30像素 */
   }
   to { 
-    opacity: 1;
-    transform: translateY(0);
+    opacity: 1; /* 动画结束：透明度1 */
+    transform: translateY(0); /* 动画结束：无偏移 */
   }
 }
 
 /* Click Effects */
 .click-explosion {
-  position: fixed;
-  pointer-events: none;
-  z-index: 9999;
+  position: fixed; /* 固定定位 */
+  pointer-events: none; /* 禁用鼠标事件 */
+  z-index: 9999; /* 层级为9999，置于最顶层 */
 }
 
 .explosion-particle {
-  position: absolute;
-  border-radius: 50%;
-  animation: explode 1s ease-out forwards;
+  position: absolute; /* 绝对定位 */
+  border-radius: 50%; /* 圆角50%，形成圆形 */
+  animation: explode 1s ease-out forwards; /* 爆炸动画，1秒缓出，保持最终状态 */
 }
 
 .explosion-flash {
-  position: absolute;
-  border-radius: 50%;
-  animation: flash 0.3s ease-out forwards;
+  position: absolute; /* 绝对定位 */
+  border-radius: 50%; /* 圆角50%，形成圆形 */
+  animation: flash 0.3s ease-out forwards; /* 闪光动画，0.3秒缓出，保持最终状态 */
 }
 
 @keyframes explode {
   0% {
-    transform: translate(0, 0) scale(1) rotate(0deg);
-    opacity: 1;
+    transform: translate(0, 0) scale(1) rotate(0deg); /* 动画开始：无位移，正常大小，无旋转 */
+    opacity: 1; /* 动画开始：完全不透明 */
   }
   70% {
-    opacity: 0.8;
+    opacity: 0.8; /* 动画70%：透明度80% */
   }
   100% {
-    transform: translate(var(--end-x), var(--end-y)) scale(0) rotate(360deg);
-    opacity: 0;
+    transform: translate(var(--end-x), var(--end-y)) scale(0) rotate(360deg); /* 动画结束：移动到终点，缩放为0，旋转360度 */
+    opacity: 0; /* 动画结束：完全透明 */
   }
 }
 
 @keyframes explodeStar {
   0% {
-    transform: translate(0, 0) scale(1) rotate(0deg);
-    opacity: 1;
+    transform: translate(0, 0) scale(1) rotate(0deg); /* 星形爆炸开始：无位移，正常大小，无旋转 */
+    opacity: 1; /* 星形爆炸开始：完全不透明 */
   }
   50% {
-    transform: translate(var(--mid-x), var(--mid-y)) scale(1.2) rotate(180deg);
-    opacity: 1;
+    transform: translate(var(--mid-x), var(--mid-y)) scale(1.2) rotate(180deg); /* 星形爆炸中点：移动到中点，放大1.2倍，旋转180度 */
+    opacity: 1; /* 星形爆炸中点：完全不透明 */
   }
   100% {
-    transform: translate(var(--end-x), var(--end-y)) scale(0) rotate(720deg);
-    opacity: 0;
+    transform: translate(var(--end-x), var(--end-y)) scale(0) rotate(720deg); /* 星形爆炸结束：移动到终点，缩放为0，旋转720度 */
+    opacity: 0; /* 星形爆炸结束：完全透明 */
   }
 }
 
 @keyframes explodeHeart {
   0% {
-    transform: translate(0, 0) scale(1) rotate(0deg);
-    opacity: 1;
+    transform: translate(0, 0) scale(1) rotate(0deg); /* 心形爆炸开始：无位移，正常大小，无旋转 */
+    opacity: 1; /* 心形爆炸开始：完全不透明 */
   }
   30% {
-    transform: translate(var(--mid-x), var(--mid-y)) scale(1.3) rotate(45deg);
-    opacity: 1;
+    transform: translate(var(--mid-x), var(--mid-y)) scale(1.3) rotate(45deg); /* 心形爆炸30%：移动到中点，放大1.3倍，旋转45度 */
+    opacity: 1; /* 心形爆炸30%：完全不透明 */
   }
   100% {
-    transform: translate(var(--end-x), var(--end-y)) scale(0) rotate(180deg);
-    opacity: 0;
+    transform: translate(var(--end-x), var(--end-y)) scale(0) rotate(180deg); /* 心形爆炸结束：移动到终点，缩放为0，旋转180度 */
+    opacity: 0; /* 心形爆炸结束：完全透明 */
   }
 }
 
 @keyframes rainbowExplode {
   0% {
-    transform: translate(0, 0) scale(1);
-    opacity: 1;
+    transform: translate(0, 0) scale(1); /* 彩虹爆炸开始：无位移，正常大小 */
+    opacity: 1; /* 彩虹爆炸开始：完全不透明 */
   }
   50% {
-    opacity: 0.8;
-    transform: translate(var(--mid-x), var(--mid-y)) scale(1.5);
+    opacity: 0.8; /* 彩虹爆炸中点：透明度80% */
+    transform: translate(var(--mid-x), var(--mid-y)) scale(1.5); /* 彩虹爆炸中点：移动到中点，放大1.5倍 */
   }
   100% {
-    transform: translate(var(--end-x), var(--end-y)) scale(0);
-    opacity: 0;
+    transform: translate(var(--end-x), var(--end-y)) scale(0); /* 彩虹爆炸结束：移动到终点，缩放为0 */
+    opacity: 0; /* 彩虹爆炸结束：完全透明 */
   }
 }
 
 @keyframes flash {
   0% {
-    transform: translate(-50%, -50%) scale(0);
-    opacity: 1;
+    transform: translate(-50%, -50%) scale(0); /* 闪光开始：居中定位，缩放为0 */
+    opacity: 1; /* 闪光开始：完全不透明 */
   }
   50% {
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 0.8;
+    transform: translate(-50%, -50%) scale(1); /* 闪光中点：居中定位，正常大小 */
+    opacity: 0.8; /* 闪光中点：透明度80% */
   }
   100% {
-    transform: translate(-50%, -50%) scale(2);
-    opacity: 0;
+    transform: translate(-50%, -50%) scale(2); /* 闪光结束：居中定位，放大2倍 */
+    opacity: 0; /* 闪光结束：完全透明 */
   }
 }
 
 /* Ripple Effect */
 .ripple-effect {
-  position: absolute;
-  border-radius: 50%;
-  animation: ripple 0.6s ease-out;
-  pointer-events: none;
+  position: absolute; /* 绝对定位 */
+  border-radius: 50%; /* 圆角50%，形成圆形 */
+  animation: ripple 0.6s ease-out; /* 波纹动画，0.6秒缓出 */
+  pointer-events: none; /* 禁用鼠标事件 */
 }
 
 @keyframes ripple {
   0% {
-    transform: scale(0);
-    opacity: 0.6;
+    transform: scale(0); /* 波纹开始：缩放为0 */
+    opacity: 0.6; /* 波纹开始：透明度60% */
   }
   100% {
-    transform: scale(2);
-    opacity: 0;
+    transform: scale(2); /* 波纹结束：放大2倍 */
+    opacity: 0; /* 波纹结束：完全透明 */
   }
 }
 
 /* Enhanced Click States */
 .nav-item {
-  position: relative;
-  overflow: hidden;
+  position: relative; /* 相对定位 */
+  overflow: hidden; /* 隐藏溢出内容 */
 }
 
 .nav-item:active {
-  transform: translateX(5px) scale(0.98);
+  transform: translateX(5px) scale(0.98); /* 激活时向右移动5像素并缩放0.98倍 */
 }
 
 .social-link {
-  position: relative;
-  overflow: hidden;
+  position: relative; /* 相对定位 */
+  overflow: hidden; /* 隐藏溢出内容 */
 }
 
 .social-link:active {
-  transform: translateY(-3px) scale(0.95);
+  transform: translateY(-3px) scale(0.95); /* 激活时向上移动3像素并缩放0.95倍 */
 }
 
 .theme-btn:active {
-  transform: scale(1.05);
+  transform: scale(1.05); /* 主题按钮激活时放大1.05倍 */
 }
 
 /* Shake Animation for Special Elements */
 @keyframes shake {
-  0%, 100% { transform: translateX(0); }
-  10%, 30%, 50%, 70%, 90% { transform: translateX(-2px); }
-  20%, 40%, 60%, 80% { transform: translateX(2px); }
+  0%, 100% { transform: translateX(0); } /* 摇摆动画开始和结束：无水平位移 */
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-2px); } /* 摇摆动画奇数节点：向左移动2像素 */
+  20%, 40%, 60%, 80% { transform: translateX(2px); } /* 摇摆动画偶数节点：向右移动2像素 */
 }
 
 .nav-item:hover .nav-item-icon {
-  animation: shake 0.5s ease-in-out;
+  animation: shake 0.5s ease-in-out; /* 导航项悬停时图标执行摇摆动画，0.5秒缓入缓出 */
 }
 
 /* Bounce Animation for Social Links */
 @keyframes bounce {
-  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-  40% { transform: translateY(-5px); }
-  60% { transform: translateY(-3px); }
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); } /* 弹跳动画静止节点：无垂直位移 */
+  40% { transform: translateY(-5px); } /* 弹跳动画第一个峰值：向上移动5像素 */
+  60% { transform: translateY(-3px); } /* 弹跳动画第二个峰值：向上移动3像素 */
 }
 
 .social-link:hover {
-  animation: bounce 0.6s ease;
+  animation: bounce 0.6s ease; /* 社交链接悬停时执行弹跳动画，0.6秒缓动 */
 }
 
 /* Glow Pulse for Theme Button */
 @keyframes glowPulse {
-  0%, 100% { box-shadow: 0 0 5px rgba(0, 245, 255, 0.3); }
-  50% { box-shadow: 0 0 20px rgba(0, 245, 255, 0.6), 0 0 30px rgba(255, 0, 128, 0.3); }
+  0%, 100% { box-shadow: 0 0 5px rgba(0, 245, 255, 0.3); } /* 发光脉冲开始和结束：小范围青色阴影 */
+  50% { box-shadow: 0 0 20px rgba(0, 245, 255, 0.6), 0 0 30px rgba(255, 0, 128, 0.3); } /* 发光脉冲中点：大范围青色和品红色阴影 */
 }
 
 .theme-btn:hover {
-  animation: glowPulse 1s ease-in-out infinite;
+  animation: glowPulse 1s ease-in-out infinite; /* 主题按钮悬停时执行发光脉冲动画，1秒缓入缓出无限循环 */
 }
 
 /* Glow Effects on Hover */
 .nav-item:hover {
   box-shadow: 
-    0 0 20px rgba(0, 245, 255, 0.2),
-    inset 0 0 20px rgba(0, 245, 255, 0.1);
+    0 0 20px rgba(0, 245, 255, 0.2), /* 外部青色发光阴影 */
+    inset 0 0 20px rgba(0, 245, 255, 0.1); /* 内部青色发光阴影 */
 }
 
 .social-link:hover {
   box-shadow: 
-    0 0 15px currentColor,
-    var(--shadow-glow);
+    0 0 15px currentColor, /* 使用当前颜色的发光阴影 */
+    var(--shadow-glow); /* 使用定义的发光阴影变量 */
 }
 
 /* Particle Trail Effect */
 .nav-item::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
+  content: ''; /* 伪元素内容为空 */
+  position: absolute; /* 绝对定位 */
+  top: 0; /* 距离顶部0像素 */
+  left: -100%; /* 初始位置在左侧外部 */
+  width: 100%; /* 宽度100% */
+  height: 100%; /* 高度100% */
   background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(0, 245, 255, 0.2),
-    transparent
+    90deg, /* 90度线性渐变（水平） */
+    transparent, /* 开始：透明 */
+    rgba(0, 245, 255, 0.2), /* 中间：半透明青色 */
+    transparent /* 结束：透明 */
   );
-  transition: left 0.5s ease;
+  transition: left 0.5s ease; /* 左侧位置过渡动画，0.5秒缓动 */
 }
 
 .nav-item:hover::before {
-  left: 100%;
+  left: 100%; /* 悬停时移动到右侧外部，形成粒子轨迹效果 */
 }
 
 /* Enhanced Theme Modal */
 .theme-modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(10px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 10000;
-  opacity: 0;
-  visibility: hidden;
-  transition: all var(--transition-normal);
+  position: fixed; /* 固定定位 */
+  top: 0; /* 距离顶部0像素 */
+  left: 0; /* 距离左侧0像素 */
+  width: 100%; /* 宽度100% */
+  height: 100%; /* 高度100% */
+  background: rgba(0, 0, 0, 0.8); /* 背景为80%透明度的黑色 */
+  backdrop-filter: blur(10px); /* 背景模糊10像素 */
+  display: flex; /* 使用弹性布局 */
+  align-items: center; /* 垂直居中对齐 */
+  justify-content: center; /* 水平居中对齐 */
+  z-index: 10000; /* 层级为10000，置于最顶层 */
+  opacity: 0; /* 初始透明度为0 */
+  visibility: hidden; /* 初始不可见 */
+  transition: all var(--transition-normal); /* 所有属性使用正常过渡时间 */
 }
 
 .theme-modal.active {
-  opacity: 1;
-  visibility: visible;
+  opacity: 1; /* 激活时透明度为1 */
+  visibility: visible; /* 激活时可见 */
 }
 
 .theme-modal-content {
-  background: var(--glass-bg);
-  backdrop-filter: blur(20px);
-  border: 1px solid var(--glass-border);
-  border-radius: var(--radius-lg);
-  padding: var(--space-xl);
-  max-width: 600px;
-  width: 90%;
-  max-height: 80vh;
-  overflow-y: auto;
-  transform: scale(0.9);
-  transition: transform var(--transition-normal);
+  background: var(--glass-bg); /* 背景使用玻璃效果 */
+  backdrop-filter: blur(20px); /* 背景模糊20像素 */
+  border: 1px solid var(--glass-border); /* 1像素实线边框，使用玻璃边框色 */
+  border-radius: var(--radius-lg); /* 圆角使用大号 */
+  padding: var(--space-xl); /* 内边距使用超大号间距 */
+  max-width: 600px; /* 最大宽度600像素 */
+  width: 90%; /* 宽度90% */
+  max-height: 80vh; /* 最大高度为视口高度的80% */
+  overflow-y: auto; /* 允许垂直滚动 */
+  transform: scale(0.9); /* 初始缩放0.9倍 */
+  transition: transform var(--transition-normal); /* 变换属性使用正常过渡时间 */
 }
 
 .theme-modal.active .theme-modal-content {
-  transform: scale(1);
+  transform: scale(1); /* 模态框激活时恢复正常大小 */
 }
 
 .theme-modal-header {
@@ -951,87 +1002,87 @@ body {
 /* Responsive Design */
 @media (max-width: 1200px) {
   .nav-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr); /* 1200px以下：导航网格改为3列等宽 */
   }
 }
 
 @media (max-width: 768px) {
   .split-layout {
-    flex-direction: column;
+    flex-direction: column; /* 768px以下：分栏布局改为垂直排列 */
   }
   
   .profile-section, 
   .navigation-section {
-    width: 100%;
-    height: auto;
-    min-height: 50vh;
-    padding: var(--space-md);
+    width: 100%; /* 个人信息和导航区域宽度100% */
+    height: auto; /* 高度自动 */
+    min-height: 50vh; /* 最小高度为视口高度的50% */
+    padding: var(--space-md); /* 内边距使用中号间距 */
   }
   
   .main-container {
-    height: auto;
-    overflow-y: auto;
+    height: auto; /* 主容器高度自动 */
+    overflow-y: auto; /* 允许垂直滚动 */
   }
   
 .profile-card {
-  background: var(--glass-bg);
-  backdrop-filter: blur(20px);
-  border: 1px solid var(--glass-border);
-  border-radius: var(--radius-xl);
+  background: var(--glass-bg); /* 背景使用玻璃效果 */
+  backdrop-filter: blur(20px); /* 背景模糊20像素 */
+  border: 1px solid var(--glass-border); /* 1像素实线边框 */
+  border-radius: var(--radius-xl); /* 圆角使用超大号 */
   padding: var(--space-2xl); /* 保留增加的内边距 */
-  box-shadow: var(--shadow-lg);
-  transition: all var(--transition-normal);
-  width: calc(90% + 200px);
-  max-width: 650px;
-  height: calc(500px + 350px);
-  max-height: none;
-  display: flex;
-  flex-direction: column;
+  box-shadow: var(--shadow-lg); /* 阴影使用大号 */
+  transition: all var(--transition-normal); /* 所有属性使用正常过渡 */
+  width: calc(90% + 200px); /* 宽度为90%加200像素 */
+  max-width: 650px; /* 最大宽度650像素 */
+  height: calc(500px + 350px); /* 高度为500像素加350像素 */
+  max-height: none; /* 无最大高度限制 */
+  display: flex; /* 使用弹性布局 */
+  flex-direction: column; /* 垂直排列 */
   justify-content: space-evenly; /* 使用space-evenly提供更均匀的间距分布 */
-  transform: scale(1.2);
-  transform-origin: center;
+  transform: scale(1.2); /* 缩放1.2倍 */
+  transform-origin: center; /* 变换原点为中心 */
 }
   
   .nav-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-md);
+    grid-template-columns: repeat(2, 1fr); /* 导航网格改为2列等宽 */
+    gap: var(--space-md); /* 网格间距使用中号 */
   }
   
   .nav-header {
-    max-width: 100%;
+    max-width: 100%; /* 导航头部最大宽度100% */
   }
   
   .theme-switcher {
-    top: var(--space-md);
-    right: var(--space-md);
+    top: var(--space-md); /* 主题切换器距离顶部中号间距 */
+    right: var(--space-md); /* 主题切换器距离右侧中号间距 */
   }
 }
 
 @media (max-width: 480px) {
   .main-container {
-    padding: var(--space-sm);
+    padding: var(--space-sm); /* 480px以下：主容器内边距使用小号 */
   }
   
   .profile-card {
-    padding: var(--space-md);
+    padding: var(--space-md); /* 个人信息卡片内边距使用中号 */
   }
   
   .profile-stats {
-    flex-direction: column;
-    gap: var(--space-sm);
+    flex-direction: column; /* 个人统计项改为垂直排列 */
+    gap: var(--space-sm); /* 统计项间距使用小号 */
   }
   
   .social-links {
-    gap: var(--space-sm);
+    gap: var(--space-sm); /* 社交链接间距使用小号 */
   }
   
   .social-link {
-    width: 40px;
-    height: 40px;
-    font-size: 16px;
+    width: 40px; /* 社交链接宽度40像素 */
+    height: 40px; /* 社交链接高度40像素 */
+    font-size: 16px; /* 社交链接图标字体16像素 */
   }
   
   .nav-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* 导航网格改为单列 */
   }
 }

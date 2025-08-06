@@ -1,410 +1,174 @@
-/* 响应式设计 - 适配各种设备尺寸 */
+/* 响应式设计 - 主文件 */
+/* 该文件导入所有视口的响应式规则 */
 
-/* 大屏幕 (1200px+) */
-@media (min-width: 1200px) {
-  .main-container {
-    max-width: 1400px;
-    margin: 0 auto;
-  }
-  
-  .nav-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  
-  .profile-card {
-    max-width: 700px;
-  }
-}
+/* 导入1920px视口规则 */
+@import url('responsive-1920.css');
 
-/* 中等屏幕 (768px - 1199px) */
-@media (min-width: 768px) and (max-width: 1199px) {
-  .main-container {
-    padding: var(--space-lg);
-  }
-  
-  .nav-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
-  .profile-stats {
-    gap: var(--space-lg);
-  }
-}
+/* 导入2560px视口规则 */
+@import url('responsive-2560.css');
 
-/* 平板设备 (481px - 767px) */
-@media (min-width: 481px) and (max-width: 767px) {
-  .main-container {
-    padding: var(--space-md);
-    gap: var(--space-xl);
-  }
-  
-  .profile-card {
-    padding: var(--space-lg);
-  }
-  
-  .profile-avatar {
-    width: 100px;
-    height: 100px;
-  }
-  
-  .profile-name {
-    font-size: var(--font-size-xl);
-  }
-  
-  .profile-stats {
-    gap: var(--space-md);
-  }
-  
-  .nav-grid {
-    grid-template-columns: 1fr;
-    gap: var(--space-md);
-  }
-  
-  .nav-header {
-    max-width: 100%;
-  }
-  
-  .theme-switcher {
-    top: var(--space-md);
-    right: var(--space-md);
-  }
-  
-  .theme-btn {
-    width: 45px;
-    height: 45px;
-  }
-  
-  .nav-category {
-    padding: var(--space-md);
-  }
-  
-  .nav-items {
-    gap: var(--space-xs);
-  }
-  
-  .nav-item {
-    padding: var(--space-sm);
-  }
-}
+/* 导入3840px视口规则 */
+@import url('responsive-3840.css');
 
-/* 手机设备 (320px - 480px) */
-@media (max-width: 480px) {
-  .main-container {
-    padding: var(--space-sm);
-    gap: var(--space-lg);
-  }
-  
-  .profile-card {
-    padding: var(--space-md);
-  }
-  
-  .profile-avatar {
-    width: 80px;
-    height: 80px;
-  }
-  
-  .profile-name {
-    font-size: var(--font-size-lg);
-  }
-  
-  .profile-title {
-    font-size: var(--font-size-base);
-  }
-  
-  .profile-description {
-    font-size: var(--font-size-sm);
-  }
-  
-  .profile-stats {
-    flex-direction: column;
-    gap: var(--space-sm);
-  }
-  
-  .stat-item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: var(--space-xs) var(--space-sm);
-    background: var(--surface-color);
-    border-radius: var(--radius-sm);
-  }
-  
-  .stat-number {
-    font-size: var(--font-size-lg);
-  }
-  
-  .social-links {
-    gap: var(--space-sm);
-  }
-  
-  .social-link {
-    width: 40px;
-    height: 40px;
-    font-size: 16px;
-  }
-  
-  .nav-title {
-    font-size: var(--font-size-lg);
-  }
-  
-  .nav-category {
-    padding: var(--space-sm);
-  }
-  
-  .category-header {
-    margin-bottom: var(--space-md);
-  }
-  
-  .category-name {
-    font-size: var(--font-size-base);
-  }
-  
-  .nav-item {
-    padding: var(--space-xs) var(--space-sm);
-    flex-direction: column;
-    align-items: flex-start;
-    gap: var(--space-xs);
-  }
-  
-  .nav-item-icon {
-    font-size: 18px;
-  }
-  
-  .nav-item-name {
-    font-size: var(--font-size-sm);
-  }
-  
-  .nav-item-description {
-    font-size: var(--font-size-xs);
-  }
-  
-  .theme-switcher {
-    top: var(--space-sm);
-    right: var(--space-sm);
-  }
-  
-  .theme-btn {
-    width: 40px;
-    height: 40px;
-  }
-  
-  .theme-icon::before {
-    font-size: 16px;
-  }
-  
-  .theme-modal-content {
-    padding: var(--space-md);
-    width: 95%;
-  }
-  
-  .theme-option {
-    padding: var(--space-sm);
-    gap: var(--space-sm);
-  }
-  
-  .theme-preview {
-    width: 50px;
-    height: 30px;
-  }
-  
-  .theme-info h3 {
-    font-size: var(--font-size-base);
-  }
-  
-  .theme-info p {
-    font-size: var(--font-size-xs);
-  }
-}
-
-/* 超小屏幕 (小于320px) */
-@media (max-width: 319px) {
-  .main-container {
-    padding: var(--space-xs);
-  }
-  
-  .profile-card {
-    padding: var(--space-sm);
-  }
-  
-  .profile-avatar {
-    width: 60px;
-    height: 60px;
-  }
-  
-  .profile-name {
-    font-size: var(--font-size-base);
-  }
-  
-  .social-link {
-    width: 35px;
-    height: 35px;
-    font-size: 14px;
-  }
-  
-  .nav-category {
-    padding: var(--space-xs);
-  }
-  
-  .theme-btn {
-    width: 35px;
-    height: 35px;
-  }
-}
+/* 通用响应式规则 */
 
 /* 横屏模式优化 */
 @media (orientation: landscape) and (max-height: 600px) {
   .main-container {
-    flex-direction: row;
-    align-items: flex-start;
-    gap: var(--space-lg);
-    padding: var(--space-md);
+    flex-direction: row; /* 主容器改为水平排列 */
+    align-items: flex-start; /* 顶部对齐 */
+    gap: var(--space-lg); /* 元素间距设置为大号 */
+    padding: var(--space-md); /* 内边距设置为中号 */
   }
-  
+
   .profile-section {
-    flex: 0 0 300px;
-    max-width: 300px;
+    flex: 0 0 300px; /* 个人信息区域固定宽度300px，不伸缩 */
+    max-width: 300px; /* 最大宽度限制为300px */
   }
-  
+
   .navigation-section {
-    flex: 1;
+    flex: 1; /* 导航区域占据剩余空间 */
   }
-  
+
   .profile-card {
-    padding: var(--space-md);
+    padding: var(--space-md); /* 个人信息卡片内边距设置为中号 */
   }
-  
+
   .profile-avatar {
-    width: 80px;
-    height: 80px;
+    width: 80px; /* 头像宽度设置为80px */
+    height: 80px; /* 头像高度设置为80px */
   }
-  
+
   .profile-stats {
-    flex-direction: column;
-    gap: var(--space-xs);
+    flex-direction: column; /* 个人统计项改为垂直排列 */
+    gap: var(--space-xs); /* 统计项间距设置为超小号 */
   }
-  
+
   .stat-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: flex; /* 统计项使用弹性布局 */
+    justify-content: space-between; /* 水平两端对齐 */
+    align-items: center; /* 垂直居中对齐 */
   }
 }
 
 /* 高分辨率屏幕优化 */
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+@media (-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
   .profile-avatar img {
-    image-rendering: -webkit-optimize-contrast;
-    image-rendering: crisp-edges;
+    image-rendering: -webkit-optimize-contrast; /* WebKit浏览器图像渲染优化 */
+    image-rendering: crisp-edges; /* 图像渲染使用清晰边缘算法 */
   }
-  
+
   .nav-item-icon,
   .category-icon,
   .social-link {
-    image-rendering: -webkit-optimize-contrast;
+    image-rendering: -webkit-optimize-contrast; /* 图标和链接图像渲染优化 */
   }
 }
 
 /* 触摸设备优化 */
 @media (hover: none) and (pointer: coarse) {
+
   .nav-item:hover,
   .social-link:hover,
   .theme-btn:hover,
   .profile-card:hover,
   .nav-category:hover {
-    transform: none;
+    transform: none; /* 触摸设备禁用悬停变换效果 */
   }
-  
+
   .nav-item:active {
-    background: var(--surface-color);
-    transform: scale(0.98);
+    background: var(--surface-color); /* 导航项激活时背景色变化 */
+    transform: scale(0.98); /* 导航项激活时轻微缩放效果 */
   }
-  
+
   .social-link:active,
   .theme-btn:active {
-    transform: scale(0.95);
+    transform: scale(0.95); /* 社交链接和主题按钮激活时缩放效果 */
   }
-  
+
   /* 增加触摸目标大小 */
   .nav-item {
-    min-height: 44px;
+    min-height: 30px; /* 导航项最小高度44px，符合触摸标准 */
   }
-  
+
   .social-link {
-    min-width: 44px;
-    min-height: 44px;
+    min-width: 30px; /* 社交链接最小宽度44px */
+    min-height: 30px; /* 社交链接最小高度44px */
   }
-  
+
   .theme-btn {
-    min-width: 44px;
-    min-height: 44px;
+    min-width: 44px; /* 主题按钮最小宽度44px */
+    min-height: 44px; /* 主题按钮最小高度44px */
   }
 }
 
 /* 打印样式 */
 @media print {
+
   .theme-switcher,
   .loading-screen,
   .original-background {
-    display: none !important;
+    display: none !important; /* 打印时隐藏主题切换器、加载屏幕和背景 */
   }
-  
+
   .main-container {
-    background: white;
-    color: black;
-    padding: 20px;
+    background: white; /* 主容器背景设置为白色 */
+    color: black; /* 文字颜色设置为黑色 */
+    padding: 20px; /* 内边距设置为20px */
   }
-  
+
   .profile-card,
   .nav-category {
-    background: white;
-    border: 1px solid #ccc;
-    box-shadow: none;
+    background: white; /* 卡片背景设置为白色 */
+    border: 1px solid #ccc; /* 边框设置为灰色实线 */
+    box-shadow: none; /* 移除阴影效果 */
   }
-  
+
   .nav-item {
-    break-inside: avoid;
+    break-inside: avoid; /* 避免导航项在打印时被分页截断 */
   }
-  
+
   .profile-name,
   .nav-title,
   .category-name {
-    color: black;
+    color: black; /* 标题文字颜色设置为黑色 */
   }
 }
 
 /* 可访问性增强 */
 @media (prefers-reduced-motion: reduce) {
   * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important; /* 减少动画持续时间到最小值 */
+    animation-iteration-count: 1 !important; /* 动画只执行一次 */
+    transition-duration: 0.01ms !important; /* 过渡效果持续时间最小化 */
   }
-  
+
   .original-circle,
   .avatar-glow,
   .status-indicator,
   .loading-spinner {
-    animation: none !important;
+    animation: none !important; /* 完全禁用特定元素的动画效果 */
   }
 }
 
 /* 高对比度模式 */
 @media (prefers-contrast: high) {
   :root {
-    --glass-bg: rgba(255, 255, 255, 0.2);
-    --glass-border: rgba(255, 255, 255, 0.5);
-    --surface-color: rgba(255, 255, 255, 0.1);
+    --glass-bg: rgba(255, 255, 255, 0.2); /* 玻璃背景透明度增加以提高对比度 */
+    --glass-border: rgba(255, 255, 255, 0.5); /* 玻璃边框透明度增加 */
+    --surface-color: rgba(255, 255, 255, 0.1); /* 表面颜色透明度调整 */
   }
-  
+
   .profile-card,
   .nav-category,
   .nav-item {
-    border-width: 2px;
+    border-width: 2px; /* 边框宽度增加到2px以提高可见性 */
   }
-  
+
   .nav-item:hover,
   .nav-item:focus {
-    outline: 2px solid var(--primary-color);
-    outline-offset: 2px;
+    outline: 2px solid var(--primary-color); /* 悬停和聚焦时添加2px主色轮廓 */
+    outline-offset: 2px; /* 轮廓偏移2px */
   }
 }

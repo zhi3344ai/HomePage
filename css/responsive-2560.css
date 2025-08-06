@@ -1,0 +1,139 @@
+/* 响应式设计 - 2560px视口规则 */
+@media (width: 2560px) {
+  :root {
+    /* 在大屏幕上使用较大的基础字体大小 */
+    font-size: 18px;
+  }
+  
+  .main-container {
+    max-width: 2560px; /* 设置主容器最大宽度 */
+    margin: 0 auto; /* 水平居中对齐 */
+  }
+  .profile-section {
+    transform: translateX(150px); /* 设置右移距离 */
+    width: 650px; /* 设置宽度 */
+    height: 100vh; /* 使用视口高度 */
+    display: flex; /* 确保使用弹性布局 */
+    align-items: center; /* 垂直居中对齐 */
+    justify-content: center; /* 水平居中对齐 */
+  }
+  
+  .nav-grid {
+    grid-template-columns: repeat(3, 400px); /* 设置列宽 */
+    transform: translateX(50px); /* 设置右移距离 */
+    gap: 40px; /* 设置间距 */
+  }
+  
+  .nav-category {
+    width: 400px; /* 设置宽度 */
+    height: 520px; /* 设置高度 */
+  }
+  
+  .profile-card {
+    max-width: 700px; /* 设置最大宽度 */
+    transform: scale(1.1); /* 设置缩放 */
+    height: 1000px; /* 设置高度 */
+  }
+  
+  .profile-avatar {
+    width: 140px; /* 设置宽度 */
+    height: 140px; /* 设置高度 */
+    margin-bottom: 30px; /* 设置下边距 */
+  }
+  
+  .profile-name {
+    font-size: 36px; /* 设置字体大小 */
+  }
+  
+  .profile-title {
+    font-size: 28px; /* 设置字体大小 */
+  }
+  
+  .profile-description {
+    font-size: 18px; /* 设置字体大小 */
+    margin-bottom: 40px; /* 设置下边距 */
+  }
+  
+  .profile-stats {
+    gap: 50px; /* 设置间距 */
+    margin-bottom: 40px; /* 设置下边距 */
+  }
+  
+  .stat-number {
+    font-size: 36px; /* 设置字体大小 */
+  }
+  
+  .stat-label {
+    font-size: 18px; /* 设置字体大小 */
+  }
+  
+  .social-links {
+    gap: 30px; /* 设置间距 */
+  }
+  
+  .social-link {
+    width: 70px; /* 设置宽度 */
+    height: 70px; /* 设置高度 */
+    font-size: 30px; /* 设置字体大小 */
+  }
+  
+  .category-header {
+    margin-bottom: 10px; /* 设置下边距 */
+  }
+  
+  .category-icon {
+    font-size: 26px; /* 设置字体大小 */
+  }
+  
+  .category-name {
+    font-size: 20px; /* 设置字体大小 */
+  }
+  
+  .nav-item {
+    padding: 10px 10px; /* 设置内边距 */
+    margin-bottom: 0px; /* 设置下边距 */
+  }
+  
+  .nav-item-icon {
+    font-size: 24px; /* 设置字体大小 */
+    width: 40px; /* 设置宽度 */
+  }
+  
+  .nav-item-name {
+    font-size: 16px; /* 设置字体大小 */
+    margin-bottom: 8px; /* 设置下边距 */
+  }
+  
+  .nav-item-description {
+    font-size: 11px; /* 设置字体大小 */
+  }
+  
+  .original-circle-1 {
+    width: 250px; /* 设置宽度 */
+    height: 250px; /* 设置高度 */
+  }
+  
+  .original-circle-2 {
+    width: 200px; /* 设置宽度 */
+    height: 200px; /* 设置高度 */
+  }
+  
+  .original-circle-3 {
+    width: 150px; /* 设置宽度 */
+    height: 150px; /* 设置高度 */
+  }
+  
+  .loading-spinner {
+    width: 60px; /* 设置宽度 */
+    height: 60px; /* 设置高度 */
+  }
+  
+  .loading-text {
+    font-size: 20px; /* 设置字体大小 */
+  }
+  
+  .loading-progress-bar {
+    width: 250px; /* 设置宽度 */
+    height: 6px; /* 设置高度 */
+  }
+}

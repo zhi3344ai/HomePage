@@ -124,7 +124,7 @@ $pageTitle = $pageTitles[$page] ?? '管理后台';
             <aside class="sidebar">
                 <div class="sidebar-header">
                     <div class="logo">
-                        <h2>🚀 导航管理</h2>
+                        <h2>HomePage</h2>
                     </div>
                 </div>
                 
